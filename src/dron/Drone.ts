@@ -47,6 +47,7 @@ export class Drone {
    * extract the necessary values to establish the drone's position.
    *
    * @param positionAndOrientation Contains the drone's position values
+   *
    * @throws Error Incorrect string format, unable to extract the values
    */
   extractPositionAndOrientation(

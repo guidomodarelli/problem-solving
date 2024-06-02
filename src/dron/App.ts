@@ -14,7 +14,6 @@ class App {
    * pot, and the rest is information belonging to the drone that has been
    * deployed. Each drone has two nodes, the first indicating its position and
    * the second, the instructions.
-   * @throws Error
    */
   App(list: string[]) {
     this.getPlateauCoordinates(list.splice(0)[0]);
