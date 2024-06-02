@@ -10,10 +10,10 @@ class App {
    * Obtains the top-right coordinates of the pot, and creates drones with their
    * respective positions and instructions.
    *
-   * @param list The first position includes the top-right coordinates of the pot,
-   * and the rest is information belonging to the drone that has been deployed.
-   * Each drone has two nodes, the first indicating its position and the second,
-   * the instructions.
+   * @param list The first position includes the top-right coordinates of the
+   * pot, and the rest is information belonging to the drone that has been
+   * deployed. Each drone has two nodes, the first indicating its position and
+   * the second, the instructions.
    * @throws Error
    */
   App(list: string[]) {
@@ -32,7 +32,8 @@ class App {
 
   /**
    * Obtains the top-right coordinates of the pot
-   * @param dimensionsString Top-right coordinates of the pot, which are two natural numbers separated by a space
+   * @param dimensionsString Top-right coordinates of the pot, which are two
+   * natural numbers separated by a space
    * @throws Error
    */
   public getPlateauCoordinates(dimensionsPattern: string) {
