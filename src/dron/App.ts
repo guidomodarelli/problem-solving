@@ -32,9 +32,9 @@ class App {
 
   /**
    * Obtains the top-right coordinates of the pot
-   * @param dimensionsString Top-right coordinates of the pot, which are two
+   *
+   * @param dimensionsPattern Top-right coordinates of the pot, which are two
    * natural numbers separated by a space
-   * @throws Error
    */
   public getPlateauCoordinates(dimensionsPattern: string) {
     const pattern = /^[0-9]+ [0-9]+$/;
@@ -48,8 +48,6 @@ class App {
 
   /**
    * For each drone, explores the pot in search of oil
-   *
-   * @throws Error
    */
   public resolve() {
     for (const drone of this.squat) {
