@@ -1,6 +1,4 @@
-import { Orientation } from "./Orientation";
-import { Direction } from "./Direction";
-import { PositionAndOrientation } from "./PositionAndOrientation";
+import { PositionAndOrientation, Direction, Orientation } from "./types";
 import {
   DroneOutOfBoundsException,
   DronePositionFormatException,
@@ -18,21 +16,21 @@ export class Drone {
     instructions: string,
     orientation: Orientation,
     x: number,
-    y: number,
+    y: number
   );
   constructor(instructions: string, positionAndOrientationPattern: string);
   constructor(
     instructions: string,
     orientationORPosition: Orientation | string,
     x = -1,
-    y = -1,
+    y = -1
   ) {
     let orientation = orientationORPosition;
 
     if (!this.isOrientation(orientation)) {
       const positionAndOrientationPattern = orientationORPosition;
       ({ x, y, orientation } = this.extractPositionAndOrientation(
-        positionAndOrientationPattern,
+        positionAndOrientationPattern
       ));
     }
 
@@ -51,7 +49,7 @@ export class Drone {
    * @throws Error Incorrect string format, unable to extract the values
    */
   extractPositionAndOrientation(
-    positionAndOrientation: string,
+    positionAndOrientation: string
   ): PositionAndOrientation {
     const pattern = /^[0-9]+ [0-9]+ [NWSE]$/;
     if (!pattern.test(positionAndOrientation)) {
