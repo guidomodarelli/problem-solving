@@ -1,8 +1,8 @@
-import { PositionAndOrientation, Direction, Orientation } from "./types";
+import { PositionAndOrientation, Movement, Orientation } from "./types";
 import {
   DroneOutOfBoundsException,
   DronePositionFormatException,
-  InvalidInstructionException,
+  InvalidMovementException,
   OrientationValueException,
 } from "./exceptions";
 
@@ -115,18 +115,18 @@ export class Drone {
     this.#orientation = orientation;
   }
 
-  private isDirection(direction: string): direction is Direction {
+  private isMovement(direction: string): direction is Movement {
     return (
-      direction === Direction.FORWARD ||
-      direction === Direction.LEFT ||
-      direction === Direction.RIGHT
+      direction === Movement.FORWARD ||
+      direction === Movement.LEFT ||
+      direction === Movement.RIGHT
     );
   }
 
   set instructions(instructions: string) {
-    for (const direction of instructions) {
-      if (!this.isDirection(direction)) {
-        throw new InvalidInstructionException();
+    for (const movement of instructions) {
+      if (!this.isMovement(movement)) {
+        throw new InvalidMovementException();
       }
     }
 
@@ -183,12 +183,12 @@ export class Drone {
         break;
     }
   }
-  private executeInstruction(instruction: Direction) {
+  private executeInstruction(instruction: Movement) {
     switch (instruction) {
-      case Direction.FORWARD:
+      case Movement.FORWARD:
         this.goForward();
         break;
-      case Direction.LEFT:
+      case Movement.LEFT:
         this.turnLeft();
         break;
       default:
@@ -204,8 +204,8 @@ export class Drone {
   }
 
   explore(widthMax: number, heightMax: number) {
-    for (const instruction of this.instructions) {
-      this.executeInstruction(instruction as Direction);
+    for (const movement of this.instructions) {
+      this.executeInstruction(movement as Movement);
       this.checkInRange(widthMax + 1, heightMax + 1);
     }
   }
