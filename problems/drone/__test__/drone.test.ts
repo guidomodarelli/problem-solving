@@ -1,7 +1,7 @@
 import { expect, it, test } from "vitest";
-import { Drone } from "../Drone";
-import { Orientation } from "../types";
-import { DroneOutOfBoundsException, InvalidInstructionException } from "../exceptions";
+import { Drone } from "../src/Drone";
+import { Orientation } from "../src/types";
+import { DroneOutOfBoundsException, InvalidMovementException } from "../src/exceptions";
 
 test("1", () => {
   const drone = new Drone("LMLMLMLMM", Orientation.NORTH, 1, 2);
@@ -46,7 +46,7 @@ test("4", () => {
 it("should be throw an InvalidInstructionException (using invalid instruction `E`)", () => {
   expect(() => {
     new Drone("E", Orientation.NORTH, 0, 0);
-  }).toThrowError(InvalidInstructionException);
+  }).toThrowError(InvalidMovementException);
 });
 
 it("should be throw an OrientationValueException (goForward x2)", () => {
