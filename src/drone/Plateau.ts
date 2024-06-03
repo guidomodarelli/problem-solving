@@ -1,7 +1,7 @@
 import { Drone } from "./Drone";
 import { PlateauCoordinatesFormatException } from "./exceptions";
 
-class App {
+export class Plateau {
   private width: number;
   private height: number;
   private squat: Drone[];
@@ -15,7 +15,7 @@ class App {
    * deployed. Each drone has two nodes, the first indicating its position and
    * the second, the instructions.
    */
-  App(list: string[]) {
+  constructor(list: string[]) {
     this.getPlateauCoordinates(list.splice(0)[0]);
     this.squat = [];
 
@@ -35,7 +35,7 @@ class App {
    * @param dimensionsPattern Top-right coordinates of the pot, which are two
    * natural numbers separated by a space
    */
-  public getPlateauCoordinates(dimensionsPattern: string) {
+  getPlateauCoordinates(dimensionsPattern: string) {
     const pattern = /^[0-9]+ [0-9]+$/;
     if (!pattern.test(dimensionsPattern)) {
       throw new PlateauCoordinatesFormatException();
@@ -48,7 +48,7 @@ class App {
   /**
    * For each drone, explores the pot in search of oil
    */
-  public resolve() {
+  resolve() {
     for (const drone of this.squat) {
       drone.explore(this.width, this.height);
       console.log(drone);

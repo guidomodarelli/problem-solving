@@ -48,7 +48,7 @@ export class Drone {
    *
    * @throws Error Incorrect string format, unable to extract the values
    */
-  extractPositionAndOrientation(
+  private extractPositionAndOrientation(
     positionAndOrientation: string
   ): PositionAndOrientation {
     const pattern = /^[0-9]+ [0-9]+ [NWSE]$/;
@@ -98,7 +98,7 @@ export class Drone {
     this.#x = y;
   }
 
-  isOrientation(orientation: string): orientation is Orientation {
+  private isOrientation(orientation: string): orientation is Orientation {
     return (
       orientation === Orientation.NORTH ||
       orientation === Orientation.WEST ||
@@ -115,7 +115,7 @@ export class Drone {
     this.#orientation = orientation;
   }
 
-  isDirection(direction: string): direction is Direction {
+  private isDirection(direction: string): direction is Direction {
     return (
       direction === Direction.FORWARD ||
       direction === Direction.LEFT ||
@@ -203,7 +203,7 @@ export class Drone {
     }
   }
 
-  public explore(widthMax: number, heightMax: number) {
+  explore(widthMax: number, heightMax: number) {
     for (const instruction of this.instructions) {
       this.executeInstruction(instruction as Direction);
       this.checkInRange(widthMax + 1, heightMax + 1);
