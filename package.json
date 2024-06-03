@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/guidomodarelli/technical-tests/issues"
   },
-  "homepage": "https://github.com/guidomodarelli/technical-tests#readme"
+  "homepage": "https://github.com/guidomodarelli/technical-tests#readme",
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
 }
