@@ -1,6 +1,6 @@
 import { Orientation } from "./Orientation";
 
-export interface PositionAndOrientation {
+export interface CoordinatesAndOrientation {
   x: number;
   y: number;
   orientation: Orientation;

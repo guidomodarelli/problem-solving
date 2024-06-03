@@ -1,4 +1,4 @@
-import { PositionAndOrientation, Movement, Orientation } from "./types";
+import { CoordinatesAndOrientation, Movement, Orientation } from "./types";
 import {
   DroneOutOfBoundsException,
   DronePositionFormatException,
@@ -50,7 +50,7 @@ export class Drone {
    */
   private extractPositionAndOrientation(
     positionAndOrientation: string
-  ): PositionAndOrientation {
+  ): CoordinatesAndOrientation {
     const pattern = /^[0-9]+ [0-9]+ [NWSE]$/;
     if (!pattern.test(positionAndOrientation)) {
       throw new DronePositionFormatException();
