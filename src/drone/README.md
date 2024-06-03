@@ -1,12 +1,12 @@
-# Drone Exploration on a Plateau: Navigate and Search for Oil
+# Drone exploration on a pot: Navigate and search for oil
 
 ## Problem Description
 
-We need to develop a program that simulates the movement of drones on a rectangular plateau. The drones explore the plateau following specific instructions to search for oil.
+We need to develop a program that simulates the movement of drones on a rectangular pot. The drones explore the pot following specific instructions to search for oil.
 
 ## Input
 
-- **Plateau Dimensions:** Two integers separated by a space indicating the size of the plateau.
+- **Pot Dimensions:** Two integers separated by a space indicating the size of the pot.
 - **Drone Initial State:** Three values separated by spaces indicating the initial coordinates (x, y) and the orientation (N, E, S, W) of the drone.
 - **Instructions:** A string of characters containing the movement instructions (`L`, `R`, `M`).
 
@@ -68,8 +68,8 @@ MMRMMRMRRM
 
 ## Considerations
 
-- The plateau is a matrix of the specified size, with `(0, 0)` as the bottom-left corner.
-- Drones will not move outside the plateau boundaries.
-- Instructions are executed sequentially and affect the drone's position and orientation on the plateau.
+- The pot is a matrix of the specified size, with `(0, 0)` as the bottom-left corner.
+- Drones will not move outside the pot boundaries.
+- Instructions are executed sequentially and affect the drone's position and orientation on the pot.
 
 Develop a function that reads the input data, processes the instructions for each drone, and returns the final position and orientation of each drone.

@@ -1,7 +1,7 @@
 import { Drone } from "./Drone";
-import { PlateauCoordinatesFormatException } from "./exceptions";
+import { PotCoordinatesFormatException } from "./exceptions";
 
-export class Plateau {
+export class Pot {
   private width: number;
   private height: number;
   private squat: Drone[];
@@ -16,7 +16,7 @@ export class Plateau {
    * the second, the instructions.
    */
   constructor(list: string[]) {
-    this.getPlateauCoordinates(list.splice(0)[0]);
+    this.getPotCoordinates(list.splice(0)[0]);
     this.squat = [];
 
     for (let i = 0; i < list.length; i++) {
@@ -35,10 +35,10 @@ export class Plateau {
    * @param dimensionsPattern Top-right coordinates of the pot, which are two
    * natural numbers separated by a space
    */
-  getPlateauCoordinates(dimensionsPattern: string) {
+  getPotCoordinates(dimensionsPattern: string) {
     const pattern = /^[0-9]+ [0-9]+$/;
     if (!pattern.test(dimensionsPattern)) {
-      throw new PlateauCoordinatesFormatException();
+      throw new PotCoordinatesFormatException();
     }
     const dimensions = dimensionsPattern.split(" ");
     this.width = parseInt(dimensions[0]);

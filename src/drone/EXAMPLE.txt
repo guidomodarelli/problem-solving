@@ -1,6 +1,6 @@
 # Input
 
-> 5 5           // <-- The size of the Plateau
+> 5 5           // <-- The size of the Pot
 > 1 2 N         // <-- Coordinates and Orientation
 > LMLMLMLMM     // <-- Instructions
 > 3 3 E
