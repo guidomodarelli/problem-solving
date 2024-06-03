@@ -3,7 +3,7 @@ import {
   DroneOutOfBoundsException,
   DronePositionFormatException,
   InvalidMovementException,
-  OrientationValueException,
+  InvalidOrientationException,
 } from "./exceptions";
 
 export class Drone {
@@ -109,7 +109,7 @@ export class Drone {
 
   set orientation(orientation: string) {
     if (!this.isOrientation(orientation)) {
-      throw new OrientationValueException();
+      throw new InvalidOrientationException();
     }
 
     this.#orientation = orientation;
