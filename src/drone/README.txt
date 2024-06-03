@@ -28,7 +28,7 @@
 |    1    |     |     |     |     |     |     |
 |    0    |     |     |     |     |     |     |
 
-## Exploración
+## Exploration
 
 ### Drone 1
 
