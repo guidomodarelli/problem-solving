@@ -1,7 +1,7 @@
 {
   "name": "technical-tests",
   "version": "1.0.0",
-  "description": "Repository of technical tests used by companies in candidate selection processes. Includes test examples, solutions, and tips for preparing for technical interviews.",
+  "description": "A repository dedicated to problem-solving in the style of LeetCode to enhance programming and algorithm skills",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -14,26 +14,9 @@
     "url": "git+https://github.com/guidomodarelli/technical-tests.git"
   },
   "keywords": [
-    "technical-tests",
-    "candidate-selection",
-    "interview-preparation",
     "coding-challenges",
-    "test-examples",
     "solutions",
-    "interview-tips",
-    "technical-interviews",
-    "programming-tests",
-    "hiring-process",
-    "coding-interviews",
-    "interview-questions",
-    "candidate-evaluation",
-    "job-interviews",
-    "technical-assessments",
     "problem-solving",
-    "interview-practice",
-    "tech-interviews",
-    "software-engineering-tests",
-    "developer-assessments"
   ],
   "author": "Guido Modarelli",
   "license": "MIT",
