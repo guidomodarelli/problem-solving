@@ -1,3 +1,3 @@
-export * from './Movement';
-export * from './Orientation';
-export * from './CoordinatesAndOrientation';
+export * from "./Movement";
+export * from "./Orientation";
+export * from "./CoordinatesAndOrientation";

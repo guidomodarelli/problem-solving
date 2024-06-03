@@ -12,26 +12,14 @@ export class Drone {
   #orientation: Orientation;
   #instructions: string;
 
-  constructor(
-    instructions: string,
-    orientation: Orientation,
-    x: number,
-    y: number
-  );
+  constructor(instructions: string, orientation: Orientation, x: number, y: number);
   constructor(instructions: string, positionAndOrientationPattern: string);
-  constructor(
-    instructions: string,
-    orientationORPosition: Orientation | string,
-    x = -1,
-    y = -1
-  ) {
+  constructor(instructions: string, orientationORPosition: Orientation | string, x = -1, y = -1) {
     let orientation = orientationORPosition;
 
     if (!this.isOrientation(orientation)) {
       const positionAndOrientationPattern = orientationORPosition;
-      ({ x, y, orientation } = this.extractPositionAndOrientation(
-        positionAndOrientationPattern
-      ));
+      ({ x, y, orientation } = this.extractPositionAndOrientation(positionAndOrientationPattern));
     }
 
     this.x = x;
@@ -48,9 +36,7 @@ export class Drone {
    *
    * @throws Error Incorrect string format, unable to extract the values
    */
-  private extractPositionAndOrientation(
-    positionAndOrientation: string
-  ): CoordinatesAndOrientation {
+  private extractPositionAndOrientation(positionAndOrientation: string): CoordinatesAndOrientation {
     const pattern = /^[0-9]+ [0-9]+ [NWSE]$/;
     if (!pattern.test(positionAndOrientation)) {
       throw new DronePositionFormatException();
@@ -116,11 +102,7 @@ export class Drone {
   }
 
   private isMovement(direction: string): direction is Movement {
-    return (
-      direction === Movement.FORWARD ||
-      direction === Movement.LEFT ||
-      direction === Movement.RIGHT
-    );
+    return direction === Movement.FORWARD || direction === Movement.LEFT || direction === Movement.RIGHT;
   }
 
   set instructions(instructions: string) {

@@ -1,10 +1,7 @@
 import { expect, it, test } from "vitest";
 import { Drone } from "../Drone";
 import { Orientation } from "../types";
-import {
-  DroneOutOfBoundsException,
-  InvalidInstructionException,
-} from "../exceptions";
+import { DroneOutOfBoundsException, InvalidInstructionException } from "../exceptions";
 
 test("1", () => {
   const drone = new Drone("LMLMLMLMM", Orientation.NORTH, 1, 2);
